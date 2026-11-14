@@ -28,10 +28,10 @@ const az = {
   },
   rack: {
     title: "İşlər",
-    lead: "Yeddi modul, yeddi layihə. Hər modulun ekranı layihənin öz rəqəmlərini göstərir; mənbə linki vaka səhifəsindədir.",
+    lead: "Yeddi modul, yeddi layihə. Hər modulun ekranı layihənin öz rəqəmlərini göstərir; mənbə linki layihənin öz səhifəsindədir.",
     measured: "ölçülüb",
     live: "canlı",
-    open: "Vakaya bax",
+    open: "Ətraflı",
     site: "Sayt",
     code: "Kod",
   },

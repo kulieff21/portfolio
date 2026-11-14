@@ -116,7 +116,6 @@ export function About({ locale }: { locale: Locale }) {
   return (
     <section id="about" className={`container ${styles.about}`}>
       <header className={styles.sectionHead}>
-        <span className={styles.count}>A</span>
         <h2>{t.title}</h2>
       </header>
       <div className={styles.aboutGrid}>
