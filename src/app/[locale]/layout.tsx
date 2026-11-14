@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { Fraunces, Geist_Mono, Instrument_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { getDict, isLocale, LOCALES } from "@/i18n/dict";
 import "../globals.css";
 
 const sans = Instrument_Sans({ subsets: ["latin", "latin-ext"], axes: ["wdth"], variable: "--font-instrument-sans" });
-const serif = Instrument_Serif({ subsets: ["latin", "latin-ext"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument-serif" });
+// Fraunces: a display serif whose Azerbaijani ə matches the rest of the alphabet
+// (Instrument Serif's did not; checked by rendering, 2026-11-14).
+const serif = Fraunces({ subsets: ["latin", "latin-ext"], axes: ["opsz"], style: ["normal", "italic"], variable: "--font-fraunces" });
 const mono = Geist_Mono({ subsets: ["latin", "latin-ext"], variable: "--font-geist-mono" });
 
 export function generateStaticParams() {

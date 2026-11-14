@@ -1,25 +1,29 @@
 :root {
-  --bg: #f2f1ed;
-  --panel: #fbfbf9;
-  --ink: #111214;
-  --ink-2: #3f4247;
-  --muted: #74787f;
-  --line: rgba(17, 18, 20, 0.12);
-  --line-2: rgba(17, 18, 20, 0.22);
-  --screen: #101214;
-  --screen-2: #191c20;
-  --screen-ink: #e9e7e0;
-  --screen-dim: rgba(233, 231, 224, 0.5);
-  --signal: #ff4f00;
-  --ok: #34b36b;
+  /* graphite theme: dark, but grey rather than black */
+  --bg: #2b2e33;
+  --bg-2: #25282c;
+  --panel: #33373d;
+  --panel-2: #3c4047;
+  --ink: #edece7;
+  --ink-2: #b9bbbd;
+  --muted: #8d9197;
+  --on-ink: #1b1d21;
+  --line: rgba(237, 236, 231, 0.09);
+  --line-2: rgba(237, 236, 231, 0.17);
+  --screen: #121417;
+  --screen-2: #1a1d21;
+  --screen-ink: #edece7;
+  --screen-dim: rgba(237, 236, 231, 0.5);
+  --signal: #ff5a1f;
+  --ok: #3ccf7a;
   --max: 1240px;
   --gutter: clamp(16px, 4vw, 48px);
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
   --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -31,7 +35,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(1100px 520px at 85% -8%, rgba(255, 90, 31, 0.09), transparent 70%),
+    radial-gradient(900px 600px at -10% 30%, rgba(120, 140, 170, 0.07), transparent 70%),
+    var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -86,7 +93,7 @@ a {
   border-radius: 999px;
   border: 1px solid var(--ink);
   background: var(--ink);
-  color: var(--panel);
+  color: var(--on-ink);
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
@@ -96,14 +103,14 @@ a {
 }
 .btn:hover {
   transform: translateY(-1px);
-  background: #000;
+  background: #fff;
 }
 .btnGhost {
   background: transparent;
   color: var(--ink);
 }
 .btnGhost:hover {
-  background: rgba(17, 18, 20, 0.05);
+  background: rgba(237, 236, 231, 0.07);
 }
 
 @media (prefers-reduced-motion: reduce) {

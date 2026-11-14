@@ -67,7 +67,7 @@ export function IntakeFlow({ locale }: { locale: Locale }) {
           </g>
         ))}
         <circle cx={pos.x} cy={pos.y - 22} r="5" className={s.pulse} style={{ transition: "cx 600ms ease, cy 600ms ease" }} />
-        <text x="410" y="170" textAnchor="middle" className={waiting ? s.monoHot : approved ? s.monoOk : s.monoDim}>
+        <text x="446" y="146" textAnchor="middle" className={waiting ? s.monoHot : approved ? s.monoOk : s.monoDim}>
           {waiting ? t.waiting : approved ? t.approved : "Telegram"}
         </text>
         <text x="20" y="214" className={s.monoDim}>

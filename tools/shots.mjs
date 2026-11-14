@@ -25,6 +25,7 @@ for (const [name, viewport] of [["desk", { width: 1440, height: 900 }], ["mob", 
         scrollTo(0, y);
         await new Promise((r) => setTimeout(r, 120));
       }
+      scrollTo(0, 0);
     });
     await page.waitForTimeout(Number(process.env.WAIT ?? 3500));
     const file = `_shots/${name}${p.replace(/[/?=&]+/g, "_")}.png`;

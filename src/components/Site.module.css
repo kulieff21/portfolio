@@ -28,6 +28,7 @@
   border-radius: 50%;
   border: 1.5px solid var(--ink);
 }
+
 .mark i {
   position: absolute;
   left: 50%;
@@ -78,7 +79,7 @@
 }
 .lang a[aria-current="true"] {
   background: var(--ink);
-  color: var(--panel);
+  color: var(--on-ink);
 }
 .cvBtn {
   min-height: 38px;
@@ -95,9 +96,10 @@
   margin-top: 22px;
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(48px, 9.2vw, 132px);
-  line-height: 0.95;
-  letter-spacing: -0.025em;
+  font-size: clamp(44px, 8vw, 116px);
+  font-variation-settings: "opsz" 144;
+  line-height: 0.98;
+  letter-spacing: -0.022em;
 }
 .line {
   display: block;
@@ -201,7 +203,7 @@
   padding: clamp(56px, 8vw, 104px) 0;
   background:
     linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 100% 48px,
-    #ebeae5;
+    var(--bg-2);
   border-top: 1px solid var(--line-2);
   border-bottom: 1px solid var(--line-2);
 }
@@ -214,8 +216,8 @@
   bottom: 0;
   width: 18px;
   background:
-    radial-gradient(circle at 50% 50%, rgba(17, 18, 20, 0.28) 2.2px, transparent 2.8px) 0 0 / 18px 24px,
-    linear-gradient(90deg, #dddcd6, #f3f2ee 45%, #d8d7d1);
+    radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.55) 2.2px, transparent 2.8px) 0 0 / 18px 24px,
+    linear-gradient(90deg, #3a3e44, #4b5058 45%, #383c42);
   border-left: 1px solid var(--line-2);
   border-right: 1px solid var(--line-2);
 }
@@ -339,11 +341,12 @@
 /* ---------- contact ---------- */
 .contact {
   padding: clamp(64px, 9vw, 120px) 0;
-  background: var(--ink);
-  color: var(--panel);
+  background: #1f2125;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
 }
 .contact :global(.label) {
-  color: rgba(251, 251, 249, 0.55);
+  color: var(--muted);
 }
 .email {
   display: inline-block;
@@ -364,7 +367,7 @@
   margin-top: 24px;
   max-width: 36em;
   font-size: 18px;
-  color: rgba(251, 251, 249, 0.75);
+  color: var(--ink-2);
 }
 .contactLinks {
   margin-top: 32px;
@@ -373,17 +376,14 @@
   gap: 10px;
 }
 .contactLinks :global(.btn) {
-  border-color: rgba(251, 251, 249, 0.35);
-  color: var(--panel);
-}
-.contactLinks :global(.btn):hover {
-  background: rgba(251, 251, 249, 0.08);
+  border-color: var(--line-2);
+  color: var(--ink);
 }
 
 .footer {
-  background: var(--ink);
-  color: rgba(251, 251, 249, 0.45);
-  border-top: 1px solid rgba(251, 251, 249, 0.1);
+  background: #1f2125;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
   font-size: 13px;
 }
 .footerInner {
