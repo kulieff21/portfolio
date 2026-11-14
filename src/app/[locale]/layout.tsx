@@ -1,0 +1,36 @@
+import type { Metadata } from "next";
+import { Geist_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { notFound } from "next/navigation";
+import { getDict, isLocale, LOCALES } from "@/i18n/dict";
+import "../globals.css";
+
+const sans = Instrument_Sans({ subsets: ["latin", "latin-ext"], axes: ["wdth"], variable: "--font-instrument-sans" });
+const serif = Instrument_Serif({ subsets: ["latin", "latin-ext"], weight: "400", style: ["normal", "italic"], variable: "--font-instrument-serif" });
+const mono = Geist_Mono({ subsets: ["latin", "latin-ext"], variable: "--font-geist-mono" });
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  const t = getDict(locale);
+  return {
+    metadataBase: new URL(process.env.SITE_URL ?? "http://localhost:3000"),
+    title: { default: t.meta.title, template: `%s · ${t.name}` },
+    description: t.meta.description,
+    alternates: { canonical: `/${locale}`, languages: { az: "/az", en: "/en" } },
+    openGraph: { title: t.meta.title, description: t.meta.description, locale, type: "website" },
+  };
+}
+
+export default async function Layout({ children, params }: LayoutProps<"/[locale]">) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
+  return (
+    <html lang={locale} className={`${sans.variable} ${serif.variable} ${mono.variable}`}>
+      <body>{children}</body>
+    </html>
+  );
+}
