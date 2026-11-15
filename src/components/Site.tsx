@@ -9,6 +9,7 @@ import { LangSwitch } from "./LangSwitch";
 import { LiveStrip } from "./LiveStrip";
 import { Module } from "./Module";
 import { Reveal } from "./Reveal";
+import { Selector } from "./Selector";
 import styles from "./Site.module.css";
 
 export const CV_FILES = { az: "/cv/Elmar_Quliyev_CV_AZ.pdf", en: "/cv/Elmar_Guliyev_CV_EN.pdf" } as const;
@@ -59,25 +60,28 @@ export function Hero({ locale }: { locale: Locale }) {
   const [a, b, em, c] = t.title;
   return (
     <section className={`container ${styles.hero}`}>
-      <p className="label">{t.kicker}</p>
-      <h1 className={styles.title}>
-        <span className={styles.line}>{a}</span>
-        <span className={styles.line}>
-          {b}
-          <em>{em}</em>
-          {c}
-        </span>
-      </h1>
-      <div className={styles.heroBottom}>
-        <p className={styles.lead}>{t.lead}</p>
-        <div className={styles.ctas}>
-          <a href="#work" className="btn">
-            {t.work} <span aria-hidden>↓</span>
-          </a>
-          <a href={CV_FILES[locale]} className="btn btnGhost" download>
-            {t.cv}
-          </a>
+      <div className={styles.heroGrid}>
+        <div className={styles.heroText}>
+          <p className="label">{t.kicker}</p>
+          <h1 className={styles.title}>
+            <span className={styles.line}>{a}</span>
+            <span className={styles.line}>
+              {b}
+              <em>{em}</em>
+              {c}
+            </span>
+          </h1>
+          <p className={styles.lead}>{t.lead}</p>
+          <div className={styles.ctas}>
+            <a href="#work" className="btn">
+              {t.work} <span aria-hidden>↓</span>
+            </a>
+            <a href={CV_FILES[locale]} className="btn btnGhost" download>
+              {t.cv}
+            </a>
+          </div>
         </div>
+        <Selector locale={locale} />
       </div>
       <LiveStrip locale={locale} />
     </section>

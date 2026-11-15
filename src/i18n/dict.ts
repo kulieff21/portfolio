@@ -17,6 +17,7 @@ const az = {
     lead: "İnterfeysdən verilənlər bazasına qədər tam veb tətbiqlər qurub canlıya çıxarıram. Aşağıdakı göstəricilər bəzək deyil: hər biri layihənin öz nəticəsindən gəlir, bəziləri isə indi, canlı işləyir.",
     work: "İşlərə bax",
     cv: "CV-ni yüklə",
+    measuring: "ölçülür",
   },
   strip: {
     baku: "Bakı vaxtı",
@@ -109,6 +110,7 @@ const en: Dict = {
     lead: "I build complete web applications, from the interface to the database, and ship them. The instruments below are not decoration: each shows a project's own result, and some of them are running live right now.",
     work: "See the work",
     cv: "Download CV",
+    measuring: "measuring",
   },
   strip: {
     baku: "Baku time",
